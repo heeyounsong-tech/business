@@ -1,0 +1,23 @@
+{
+  "name": "punch-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build && node scripts/standalone.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node tests/engine.test.js && node tests/camera.test.js",
+    "test:e2e": "playwright test",
+    "setup:assets": "bash scripts/setup-assets.sh",
+    "build:deploy": "node scripts/check-assets.mjs && npm run build"
+  },
+  "dependencies": {
+    "@mediapipe/pose": "0.5.1675469404",
+    "@mediapipe/tasks-vision": "0.10.32"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "vite": "6.4.1"
+  }
+}
